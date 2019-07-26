@@ -6,7 +6,7 @@ I saw a tweet from Chuck Garfein [here](https://twitter.com/ChuckGarfien/status/
 
 "Nelson Cruz just hit the baseball on the left field concourse.   Ball has been jumping off his bat this year, especially here in Chicago." 
 
-I was intrigued by this. I wanted to know whether there really was a significant difference between homerun distances this year in Chicago and anywhere else. I decided that the tool appropriate was probably the chi-squared test, a statistical test used to determine whether there's a "significant" difference between two distributions. This code will help answer that question.
+I was intrigued by this. I wanted to know whether there really was a significant difference between homerun distances this year in Chicago and anywhere else. I decided that the tool appropriate was probably the Kolmogorov-Smirnov test, a statistical test used to determine whether there's a "significant" difference between two distributions. This code will help answer that question.
 
 ## Data source
 
@@ -14,7 +14,11 @@ I exported the data from (Baseball Savant)[https://baseballsavant.mlb.com/statca
 
 ## Results
 
-Pending ...
+I computed the mean distances of homeruns in chicago versus elswhere, and found no major differences. Here are the results: ![here](means.png). Players in Chicago hit the ball 401 ft on homeruns as compared to the mlb-wide 400 ft.
+
+Then, I made a relative-frequency histogram to visually compare. The distributions look pretty similar. Here's the graph: ![here](hr_distributions.png)
+
+Finally, I did a KS test to check if the two distributions were statistically significantly different. The usual standard for tests like this is P<=.05. In this case, the null hypothesis is that the distributions are not different. With a P-value of p=0.8889765283383031, we fail to reject the null hypothesis and the distributions are not statistically significantly different.
 
 ## Addendum
 
